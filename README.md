@@ -86,7 +86,7 @@ Run client.py
 python3 client.py
 ```
 
-Run client.py
+Run play.py
 ```bash 
 python3 play.py
 ```

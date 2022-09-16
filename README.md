@@ -76,7 +76,7 @@ screen -r <director screen session name>
 ```
 
 ## Mac
-To test locally:
+### To test locally:
 Run server.py
 ```bash 
 python3 server.py
@@ -101,6 +101,10 @@ Run recite.py on Raspberry Pi
 ```bash 
 python3 client.py
 ```
+
+### To create new script:
+R01_1000 format -> [Name of Script] [Name of .wav file] [Length of the voice line][...commnads]
+
 
 # Workflows
 

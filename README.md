@@ -86,6 +86,11 @@ Run client.py
 python3 client.py
 ```
 
+Run client.py
+```bash 
+python3 play.py
+```
+
 # Workflows
 
 ### Director Workflow

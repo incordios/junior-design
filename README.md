@@ -76,6 +76,7 @@ screen -r <director screen session name>
 ```
 
 ## Mac
+To test locally:
 Run server.py
 ```bash 
 python3 server.py
@@ -89,6 +90,16 @@ python3 client.py
 Run play.py
 ```bash 
 python3 play.py
+```
+
+Run rob.py on Raspberry Pi
+```bash 
+python3 client.py
+```
+
+Run recite.py on Raspberry Pi
+```bash 
+python3 client.py
 ```
 
 # Workflows

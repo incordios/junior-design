@@ -3,7 +3,8 @@ This is the class repository for ECE3872, Fundamentals of Design. Below are the 
 
 # Getting Started
 
-## For Students
+## Windows
+### For Students
 
 Clone this repo into desired working directory on the Raspberry Pi 
 ```bash 
@@ -15,7 +16,7 @@ You will be editing the `robot.py` file to code in your robot's corresponding lo
 
 For deployment into actual environment, obtain the director IP and edit the script. Then on bootup, you must run the `robot.py` script. 
 
-## For Director
+### For Director
 
 Clone this repo into desired working directory on the Linux machine. 
 ```bash 
@@ -34,7 +35,7 @@ Create or edit an appropriate CSV file to define the robot order, latency, and c
 sudo python3 director.py <path to csv file>
 ```
 
-## For Demo Run
+### For Demo Run
 
 Clone this repo into desired working directory on the Linux machine. 
 ```bash 
@@ -72,6 +73,17 @@ screen -ls
 Attach to the director screen session to enter q to continue the demo
 ```bash 
 screen -r <director screen session name> 
+```
+
+## Mac
+Run server.py
+```bash 
+python3 server.py
+```
+
+Run client.py
+```bash 
+python3 client.py
 ```
 
 # Workflows

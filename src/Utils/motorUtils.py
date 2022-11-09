@@ -17,7 +17,6 @@ GPIO.setup(8, GPIO.OUT)  #PWMB
 pwmb = GPIO.PWM(8, pwmFreq) # pin 13 to PWMB
 pwmb.start(100)
 
-# Functions
 def forward(spd):
     runMotor(spd, 0)
 
@@ -43,10 +42,12 @@ def motorStop():
     GPIO.output(12, GPIO.LOW)
 
 def oscillate(time):
-    for i in range(time):
-        forward(1)
-        sleep(0.0038)
+    for _ in range(time):
+        forward(13)
+        sleep(0.040)
         motorStop()
-        sleep(1)
-        backward(20)
-        sleep(0.02)
+        sleep(3)
+        backward(15)
+        sleep(0.05)
+        motorStop()
+        sleep(3)

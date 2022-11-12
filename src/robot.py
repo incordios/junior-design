@@ -12,11 +12,11 @@ from Protocol import libclient
 
 from Utils.robotUtils import create_request, listen_for_director, start_connection, initiate_connection
 
-ROBOT_NAME = "<INSERT MATCHING ROBOT NAME IN CSV FILE"
-HOST = "<DIRECTOR IP ADDR>"
-PORT = # DIRECTOR LISTENING PORT 
+ROBOT_NAME = "Robot1"
+HOST = "127.0.0.1"
+PORT = 4456
 
-LISTEN_PORT = # ROBOT LISTEN PORT
+LISTEN_PORT = 65432
 
 if __name__ == "__main__":
   print('Register with director...')

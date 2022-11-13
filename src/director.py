@@ -7,15 +7,15 @@ import time
 import keyboard 
 import argparse
 
-# sys.path.insert(0, 'C:/Users/IvanZou/Downloads/ECE-3872/Projects/Wonderland/Protocol/')
-
 from Protocol import libserver
 from Protocol import libclient
 
+from Utils.robotUtils import get_ipv4
+
 import csv
 
-HOST = "127.0.0.1"  # Standard loopback interface address (localhost)
-PORT = 65432  # Port to listen on (non-privileged ports are > 1023)
+HOST = get_ipv4()  # Standard loopback interface address (localhost). When in production, it should match the assigned IP Addr.
+PORT = 65432  # Port to listen on (non-privileged ports are > 1023). Make sure this port is open
 
 def create_request(action, value):
   return dict(

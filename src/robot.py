@@ -19,7 +19,9 @@ from Utils.robotUtils import (
 
 from Utils.motorUtils import (
     oscillate,
-    testMode
+    testMode,
+    ledOn,
+    ledOff,
 )
 
 from Utils.audioUtils import (
@@ -50,9 +52,9 @@ if __name__ == "__main__":
         
         if msg:
             print("Main Loop recieved ", msg, " so will start to do corresponding task")
-            # Motor - adjust constants for arm
             speak(msg["value"])
-            
+        
+        #test mode is never run, bc this if statement is not in parallel
         if testMode():
             speak(
                 """if you can hear this
@@ -68,9 +70,9 @@ if __name__ == "__main__":
             speak("""lastly, the L.E.D light should start blinking""")
             for _ in range(3):
                 time.sleep(1)
-                led.on()
+                ledOn()
                 time.sleep(1)
-                led.off()
+                ledOff()
                 time.sleep(1)
             speak(
                 """flip the switch off to stop the test mode from

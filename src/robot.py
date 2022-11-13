@@ -17,6 +17,15 @@ from Utils.robotUtils import (
     initiate_connection,
 )
 
+from Utils.motorUtils import (
+    oscillate,
+    testMode
+)
+
+from Utils.audioUtils import (
+    speak,
+)
+
 ROBOT_NAME = "Robot1"
 DIRECTOR_HOST = "127.0.0.1"
 PORT = 65432
@@ -38,44 +47,34 @@ if __name__ == "__main__":
         print(msg)
         if msg["value"] == "break":
             break
-
-        print("Main Loop recieved ", msg, " so will start to do corresponding task")
-
-        # READ THE MESSAGE AND DO WHATEVER YOUR ROBOT WILL DO.
-        if GPIO.input(40) == 1:
+        
+        if msg:
+            print("Main Loop recieved ", msg, " so will start to do corresponding task")
+            # Motor - adjust constants for arm
+            speak(msg["value"])
+            
+        if testMode():
             speak(
                 """if you can hear this
         the audio system and wifi is working"""
             )
-            sleep(1)
+            time.sleep(1)
             oscillate(2)
             speak(
                 """if the motors oscillated twice
         the motor system is working"""
             )
-            sleep(1)
+            time.sleep(1)
             speak("""lastly, the L.E.D light should start blinking""")
             for _ in range(3):
-                sleep(1)
+                time.sleep(1)
                 led.on()
-                sleep(1)
+                time.sleep(1)
                 led.off()
-                sleep(1)
+                time.sleep(1)
             speak(
                 """flip the switch off to stop the test mode from
         continuing"""
             )
-            sleep(2)
-        else:
-            # Motor - adjust constants for arm
-            t1 = threading.Thread(target=oscillate, args=(5,))
-            t2 = threading.Thread(target=speak, args=(msg,))
+            time.sleep(2)
 
-            t1.start()
-            t2.start()
-
-            # join the threads
-            t1.join()
-            t2.join()
-
-            GPIO.cleanup()

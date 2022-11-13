@@ -77,3 +77,5 @@ def oscillate(time):
         motorStop()
         sleep(3)
 
+def testMode():
+    return GPIO.input(TESTMODE) == 1

@@ -4,6 +4,8 @@ import pygame
 
 from Utils.motorUtils import (
     oscillate,
+    ledOn,
+    ledOff,
 )
 
 # Functions
@@ -13,6 +15,8 @@ def speak(txt, lang='en'):
     pygame.mixer.music.load(voice.name)
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy() == True:
+        ledOn()
         oscillate(1)
+        ledOff()
     voice.close()
 

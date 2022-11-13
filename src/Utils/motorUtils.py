@@ -78,4 +78,10 @@ def oscillate(time):
         sleep(3)
 
 def testMode():
-    return GPIO.input(TESTMODE) == 1
+    return (GPIO.input(TESTMODE) == 1)
+
+def ledOn():
+    led.on()
+
+def ledOff():
+    led.off()
